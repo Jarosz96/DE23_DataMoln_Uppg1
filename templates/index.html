@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Population Data</title>
+</head>
+<body>
+    <h1>Population by Year</h1>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Year</th>
+                <th>Male Population</th>
+                <th>Female Population</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for year, male, female in zip(years, male_population, female_population) %}
+                <tr>
+                    <td>{{ year }}</td>
+                    <td>{{ male }}</td>
+                    <td>{{ female }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
