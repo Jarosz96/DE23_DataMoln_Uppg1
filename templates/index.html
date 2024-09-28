@@ -7,23 +7,33 @@
 </head>
 <body>
     <h1>Population by Year</h1>
-    <table border="1">
-        <thead>
-            <tr>
-                <th>Year</th>
-                <th>Male Population</th>
-                <th>Female Population</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for year, male, female in zip(years, male_population, female_population) %}
-                <tr>
-                    <td>{{ year }}</td>
-                    <td>{{ male }}</td>
-                    <td>{{ female }}</td>
-                </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+    <div style="display: flex;">
+        <!-- Table Display -->
+        <div style="width: 50%;">
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>Year</th>
+                        <th>Male Population</th>
+                        <th>Female Population</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for year, male, female in zip(years, male_population, female_population) %}
+                        <tr>
+                            <td>{{ year }}</td>
+                            <td>{{ male }}</td>
+                            <td>{{ female }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Matplotlib Plot Display -->
+        <div style="width: 50%;">
+            <img src="/plot.png" alt="Population Line Chart">
+        </div>
+    </div>
 </body>
 </html>
