@@ -52,7 +52,7 @@ def index():
     # Render the graph as an HTML component
     graph_html = pio.to_html(fig, full_html=False)
     
-    return render_template('index.html', graph_html=graph_html)
+    return render_template('index.html', graph_html=graph_html, zip=zip)
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
