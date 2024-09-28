@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Population Data</title>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <h1>Population by Year</h1>
@@ -26,50 +25,5 @@
             {% endfor %}
         </tbody>
     </table>
-
-    <h2>Population Chart</h2>
-    <canvas id="populationChart" width="400" height="200"></canvas>
-
-    <script>
-        var years = {{ years | safe }};
-        var malePopulation = {{ male_population | safe }};
-        var femalePopulation = {{ female_population | safe }};
-
-        var ctx = document.getElementById('populationChart').getContext('2d');
-        var populationChart = new Chart(ctx, {
-            type: 'line',
-            data: {
-                labels: years,
-                datasets: [{
-                    label: 'Male Population',
-                    data: malePopulation,
-                    borderColor: 'blue',
-                    fill: false
-                },
-                {
-                    label: 'Female Population',
-                    data: femalePopulation,
-                    borderColor: 'pink',
-                    fill: false
-                }]
-            },
-            options: {
-                scales: {
-                    x: {
-                        title: {
-                            display: true,
-                            text: 'Year'
-                        }
-                    },
-                    y: {
-                        title: {
-                            display: true,
-                            text: 'Population'
-                        }
-                    }
-                }
-            }
-        });
-    </script>
 </body>
 </html>
