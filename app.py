@@ -3,17 +3,21 @@ import pyodbc
 import plotly.express as px
 import plotly.io as pio
 import os
+from dotenv import load_dotenv
 
+load_dotenv()
 app = Flask(__name__)
 
 # Database connection setup
 def get_db_connection():
-    server = os.getenv('DB_SERVER')
-    database = os.getenv('DB_DATABASE')
+    server = os.getenv('SERVER')
+    database = os.getenv('DATABASE')
     username = os.getenv('DB_USERNAME')
-    password = os.getenv('DB_PASSWORD')
-    driver = '{ODBC Driver 17 for SQL Server}'
-    conn = pyodbc.connect(f'DRIVER={driver};SERVER={server};DATABASE={database};UID={username};PWD={password}')
+    password = os.getenv('PASSWORD')
+    driver = os.getenv('DRIVER')
+    
+    conn = pyodbc.connect('DRIVER=' + driver + ';SERVER=' + server + ';PORT=1433;DATABASE=' + database + ';UID=' + username + ';PWD=' + password)
+
     return conn
 
 @app.route('/')
