@@ -1,4 +1,4 @@
-from flask_app import Flask, render_template
+from flask import Flask, render_template
 import pyodbc
 import os
 from dotenv import load_dotenv
