@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask_app import Flask, render_template
 import pyodbc
 import os
 from dotenv import load_dotenv
@@ -30,7 +30,7 @@ def index():
     male_population = [row[1] for row in data]
     female_population = [row[2] for row in data]
 
-    return render_template('index.html', years=years, male_population=male_population, female_population=female_population)
+    return render_template('index.html', years=years, male_population=male_population, female_population=female_population, zip=zip)
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
