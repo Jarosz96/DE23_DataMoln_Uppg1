@@ -34,7 +34,7 @@ def index():
     male_population = [row[1] for row in data]
     female_population = [row[2] for row in data]
 
-    return render_template('index.html', years=years, male_population=male_population, female_population=female_population)
+    return render_template('index.html', years=years, male_population=male_population, female_population=female_population, zip=zip)
 
 @app.route('/plot.png')
 def plot_png():
