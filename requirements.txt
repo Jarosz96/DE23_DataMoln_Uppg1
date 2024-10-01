@@ -1,0 +1,6 @@
+pyodbc
+azure-functions
+azure-storage-queue
+dotenv
+flask
+pandas
