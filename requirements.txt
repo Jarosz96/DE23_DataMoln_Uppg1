@@ -1,6 +1,7 @@
 pyodbc
 azure-functions
 azure-storage-queue
-dotenv
+python-dotenv
 flask
 pandas
+grafana
